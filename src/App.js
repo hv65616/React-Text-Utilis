@@ -1,29 +1,51 @@
 import "./App.css";
 
 function App() {
-  let name = "Himanshu Verma";
   return (
     <>
-      <nav>
-        <li>HOME</li>
-        <li>ABOUT</li>
-        <li>PHONE</li>
-        <li>CONTACT</li>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="/">
+            Text-Utilis
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="/">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/">
+                  About
+                </a>
+              </li>
+            </ul>
+            <form className="d-flex">
+              <input
+                className="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button className="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
       </nav>
-      <h1>{name}</h1>
-      <div className="container">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nemo
-        autem ea numquam eos sequi. Nihil a explicabo odio dolor at praesentium
-        magnam, culpa numquam fugiat? Architecto iste harum illum minus, nemo
-        tenetur fugit obcaecati quod sequi. Accusamus voluptates ab iusto a
-        animi saepe nulla aliquam! Laborum rem iure omnis totam iusto
-        voluptatum. Quidem voluptatum molestiae doloribus voluptatibus ad nam
-        omnis, atque recusandae expedita nisi, magni saepe similique soluta.
-        Incidunt, iure amet non facere, reprehenderit vitae labore architecto
-        eius delectus pariatur totam. Dignissimos et corrupti, exercitationem
-        maxime asperiores totam architecto nulla quisquam sint quibusdam
-        perferendis quos soluta recusandae? Illum, corrupti.
-      </div>
     </>
   );
 }
