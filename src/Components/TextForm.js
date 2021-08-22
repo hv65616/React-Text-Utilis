@@ -27,7 +27,12 @@ export default function TextForm(props) {
   const [text, setText] = useState("");
   return (
     <>
-      <div className="container">
+      <div
+        className="container"
+        style={{
+          color: props.mode === "dark" ? "white" : "grey",
+        }}
+      >
         <h1>Enter Your Text To Analyse</h1>
         <div className="mb-3">
           <label htmlFor="exampleFormControlTextarea1" className="form-label">
@@ -39,6 +44,10 @@ export default function TextForm(props) {
             rows="8"
             value={text}
             onChange={handleOnChange}
+            style={{
+              backgroundColor: props.mode === "dark" ? "grey" : "white",
+              color: props.mode === "dark" ? "white" : "grey",
+            }}
           ></textarea>
         </div>
         <button className="btn btn-primary mx-1" onClick={handleUpperCase}>
@@ -57,13 +66,18 @@ export default function TextForm(props) {
           Clear Text
         </button>
       </div>
-      <div className="container my-3">
+      <div
+        className="container my-3"
+        style={{
+          color: props.mode === "dark" ? "white" : "grey",
+        }}
+      >
         <h1>Your Text Summary</h1>
         <p>
           {text.split(" ").length} words and {text.length} characters here.
         </p>
         <h3>Your Text Preview</h3>
-        <p>{text}</p>
+        <p>{text.length > 0 ? text : "Enter Something To Preview It Here :)"}</p>
       </div>
     </>
   );
