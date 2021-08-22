@@ -2,14 +2,23 @@ import React, { useState } from "react";
 
 export default function TextForm(props) {
   const handleUpperCase = () => {
-    // console.log("UpperCase Button Is Clicked " + text);
     let newtext = text.toUpperCase();
     setText(newtext);
   };
   const handleLowerCase = () => {
-    // console.log("UpperCase Button Is Clicked " + text);
     let newtext = text.toLowerCase();
     setText(newtext);
+  };
+  const handleClearCase = () => {
+    let newtext = "";
+    setText(newtext);
+  };
+  const handleAlternatingCase = () => {
+    let newtext = text.toLowerCase().split("");
+    for (let index = 0; index < newtext.length; index += 2) {
+      newtext[index] = newtext[index].toUpperCase();
+    }
+    setText(newtext.join(""));
   };
   const handleOnChange = (event) => {
     // console.log("OnChange");
@@ -37,6 +46,15 @@ export default function TextForm(props) {
         </button>
         <button className="btn btn-primary mx-1" onClick={handleLowerCase}>
           Convert To LowerCase
+        </button>
+        <button
+          className="btn btn-primary mx-1"
+          onClick={handleAlternatingCase}
+        >
+          Convert to AlTeRnAtInG Case
+        </button>
+        <button className="btn btn-primary mx-1" onClick={handleClearCase}>
+          Clear Text
         </button>
       </div>
       <div className="container my-3">
