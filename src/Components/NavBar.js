@@ -32,7 +32,7 @@ export default function NavBar(props) {
               </a>
             </li>
           </ul>
-          <form className="d-flex">
+          {/* <form className="d-flex">
             <input
               className="form-control me-2"
               type="search"
@@ -42,7 +42,7 @@ export default function NavBar(props) {
             <button className="btn btn-outline-success" type="submit">
               Search
             </button>
-          </form>
+          </form> */}
         </div>
       </div>
     </nav>
