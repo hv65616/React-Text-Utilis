@@ -4,10 +4,12 @@ export default function TextForm(props) {
   const handleUpperCase = () => {
     let newtext = text.toUpperCase();
     setText(newtext);
+    props.showAlert("Converted To UpperCase", "success");
   };
   const handleLowerCase = () => {
     let newtext = text.toLowerCase();
     setText(newtext);
+    props.showAlert("Converted To LowerCase", "success");
   };
   const handleClearCase = () => {
     let newtext = "";
@@ -19,6 +21,7 @@ export default function TextForm(props) {
       newtext[index] = newtext[index].toUpperCase();
     }
     setText(newtext.join(""));
+    props.showAlert("Converted To AlternatingCase", "success");
   };
   const handleOnChange = (event) => {
     // console.log("OnChange");
@@ -77,7 +80,9 @@ export default function TextForm(props) {
           {text.split(" ").length} words and {text.length} characters here.
         </p>
         <h3>Your Text Preview</h3>
-        <p>{text.length > 0 ? text : "Enter Something To Preview It Here :)"}</p>
+        <p>
+          {text.length > 0 ? text : "Enter Something To Preview It Here :)"}
+        </p>
       </div>
     </>
   );
