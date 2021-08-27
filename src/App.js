@@ -12,8 +12,20 @@ function App() {
 
   const [alert, setAlert] = useState(null);
 
-  const toggleMode = () => {
+  // const removeBackgroundColor = () => {
+  //   document.body.classList.remove("bg-light");
+  //   document.body.classList.remove("bg-dark");
+  //   document.body.classList.remove("bg-danger");
+  //   document.body.classList.remove("bg-warning");
+  //   document.body.classList.remove("bg-primary");
+  //   document.body.classList.remove("bg-info");
+  // };
+
+  const toggleMode = (cls) => {
+    // removeBackgroundColor();
+    // document.body.classList.add("bg-" + cls);
     if (mode === "light") {
+      console.log(cls);
       setMode("dark");
       setModeText("DarkMode");
       document.body.style.backgroundColor = "grey";

@@ -14,6 +14,7 @@ export default function TextForm(props) {
   const handleClearCase = () => {
     let newtext = "";
     setText(newtext);
+    props.showAlert("TextBox Cleared", "success");
   };
   const handleAlternatingCase = () => {
     let newtext = text.toLowerCase().split("");

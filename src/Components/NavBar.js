@@ -34,19 +34,41 @@ export default function NavBar(props) {
               </a>
             </li>
           </ul>
-          {/* <form className="d-flex">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form> */}
         </div>
       </div>
+
+{/* ******Code to add color pallete in navigation bar*******
+      <div className="d-flex">
+        <div
+          className="bg-primary rounded mx-2"
+          style={{ height: "20px", width: "20px", cursor: "pointer" }}
+          onClick={() => {
+            props.toggleMode("primary");
+          }}
+        ></div>
+        <div
+          className="bg-danger rounded mx-2"
+          style={{ height: "20px", width: "20px", cursor: "pointer" }}
+          onClick={() => {
+            props.toggleMode("danger");
+          }}
+        ></div>
+        <div
+          className="bg-warning rounded mx-2"
+          style={{ height: "20px", width: "20px", cursor: "pointer" }}
+          onClick={() => {
+            props.toggleMode("warning");
+          }}
+        ></div>
+        <div
+          className="bg-info rounded mx-2"
+          style={{ height: "20px", width: "20px", cursor: "pointer" }}
+          onClick={() => {
+            props.toggleMode("info");
+          }}
+        ></div>
+      </div> */}
+
       <div
         className={`form-check form-switch text-${
           props.mode === "light" ? "dark" : "light"
@@ -56,7 +78,9 @@ export default function NavBar(props) {
           className="form-check-input"
           type="checkbox"
           id="flexSwitchCheckDefault"
-          onClick={props.toggleMode}
+          onClick={() => {
+            props.toggleMode(null);
+          }}
         />
         <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
           {props.modeText}
