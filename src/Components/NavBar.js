@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import { Link } from "react-router-dom";
 export default function NavBar(props) {
   return (
     <nav
@@ -24,20 +24,20 @@ export default function NavBar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
+              <Link className="nav-link active" aria-current="page" to="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
-                {props.about}
-              </a>
+              <Link className="nav-link" to="/about">
+                AboutUs
+              </Link>
             </li>
           </ul>
         </div>
       </div>
 
-{/* ******Code to add color pallete in navigation bar*******
+      {/* ******Code to add color pallete in navigation bar*******
       <div className="d-flex">
         <div
           className="bg-primary rounded mx-2"
