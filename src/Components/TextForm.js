@@ -54,19 +54,19 @@ export default function TextForm(props) {
             }}
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-1" onClick={handleUpperCase}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleUpperCase}>
           Convert To UpperCase
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleLowerCase}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleLowerCase}>
           Convert To LowerCase
         </button>
         <button
-          className="btn btn-primary mx-1"
+          className="btn btn-primary mx-1 my-1"
           onClick={handleAlternatingCase}
         >
           Convert to AlTeRnAtInG Case
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleClearCase}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleClearCase}>
           Clear Text
         </button>
       </div>
@@ -78,7 +78,12 @@ export default function TextForm(props) {
       >
         <h1>Your Text Summary</h1>
         <p>
-          {text.split(" ").length} words and {text.length} characters here.
+          {
+            text.split(" ").filter((element) => {
+              return element.length !== 0;
+            }).length
+          }{" "}
+          words and {text.length} characters here.
         </p>
         <h3>Your Text Preview</h3>
         <p>
